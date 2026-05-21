@@ -1,0 +1,76 @@
+
+# ============================================================
+# CLIN-LLM Configuration File
+# Paper: CLIN-LLM: An AI Pipeline for Medical Diagnosis and
+#        Treatment Recommendation (PLOS ONE)
+# ============================================================
+
+project:
+  name: "CLIN-LLM"
+  version: "1.0.0"
+  seed: 42
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  model_output: "outputs/models"
+  results_output: "outputs/results"
+  logs: "outputs/logs"
+
+preprocessing:
+  max_seq_length: 512
+  min_token_freq: 2
+  negation_window: 5          # tokens to the right of a negation cue
+  smote_k_neighbors: 5
+  smote_random_state: 42
+  umls_placeholder: true      # set false when UMLS API key is available
+
+classification:
+  model_name: "dmis-lab/biobert-v1.1"
+  num_labels: 41              # matches DiseaseClassificationDataset label space
+  max_length: 256
+  batch_size: 32
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  epochs: 10
+  dropout_rate: 0.3
+  focal_loss_gamma: 2.0
+  focal_loss_alpha: 0.25
+  mc_dropout_samples: 30      # forward passes for uncertainty estimation
+  confidence_threshold: 0.75  # below this => flag for expert review
+  device: "cuda"              # "cpu" fallback is handled in code
+
+retrieval:
+  model_name: "pritamdeka/BioBERT-mnli-snli-scinli-scitail-mednli-stsb"
+  top_k: 5
+  similarity_metric: "cosine"
+  index_batch_size: 64
+  corpus_path: "data/processed/meddialog_index.json"
+
+generation:
+  model_name: "google/flan-t5-large"
+  max_new_tokens: 256
+  min_new_tokens: 40
+  num_beams: 4
+  temperature: 0.7
+  repetition_penalty: 1.3
+  length_penalty: 1.0
+  device: "cuda"
+
+safety:
+  confidence_threshold: 0.75       # mirrors classification.confidence_threshold
+  antibiotic_stewardship_enabled: true
+  ddi_check_enabled: true
+  rxnorm_api_base: "https://rxnav.nlm.nih.gov/REST"
+  rxnorm_timeout_seconds: 5
+  high_risk_severity_levels:
+    - "contraindicated"
+    - "major"
+
+evaluation:
+  test_split: 0.15
+  val_split: 0.15
+  report_output_dir: "outputs/results"
+  generate_plots: true
+  plot_format: "pdf"
