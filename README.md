@@ -51,8 +51,8 @@ CLIN-LLM-Replication/
 ## Installation
 
 ```bash
-git clone https://github.com/your-org/CLIN-LLM-Replication.git
-cd CLIN-LLM-Replication
+git clone https://github.com/Mehedi16009/CLIN_LLM.git
+cd CLIN_LLM
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
@@ -120,12 +120,11 @@ Full hyperparameter documentation is in [`wiki/02_Hyperparameter_Guide.md`](wiki
 If you use this code in your research, please cite:
 
 ```bibtex
-@article{clin-llm-2024,
-  title   = {CLIN-LLM: An AI Pipeline for Medical Diagnosis and Treatment Recommendation},
-  author  = {[Authors]},
-  journal = {PLOS ONE},
-  year    = {2024},
-  doi     = {[DOI placeholder]}
+@article{hasan2025clin,
+  title={Clin-llm: A safety-constrained hybrid framework for clinical diagnosis and treatment generation},
+  author={Hasan, Md Mehedi and Hossain, Md Abir and Sayem, Farman Hossain and Paul, Bikash Kumar and Rahman, Ziaur and Uddin, Mohammad Shorif and Mostafiz, Rafid},
+  journal={arXiv preprint arXiv:2510.22609},
+  year={2025}
 }
 ```
 
@@ -136,3 +135,13 @@ This repository is released under the MIT License. See [LICENSE](LICENSE) for de
 ## Acknowledgements
 
 This work uses the MedDialog corpus, BioBERT (DMIS Lab, Korea University), and the Google FLAN-T5 model. Drug-drug interaction data is queried from the U.S. National Library of Medicine RxNorm REST API.
+
+---
+
+## Contact
+
+Md Mehedi Hasan <br>
+Mawlana Bhashani Science and Technology University <br>
+- GitHub: [Sentra-Guard Repository](https://github.com/Mehedi16009/Sentra-Guard/))
+- Personal Website: [Portfolio](https://md-mehedi-hasan-resume.vercel.app/)
+- Email: [mehedi.hasan.ict@mbstu.ac.bd](mehedi.hasan.ict@mbstu.ac.bd)
