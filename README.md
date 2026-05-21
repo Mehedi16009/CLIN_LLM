@@ -33,7 +33,7 @@ This project utilizes two primary public datasets to train and evaluate the CLIN
 * **Usage in Pipeline:** Vectorized using `Biomedical Sentence-BERT` to form the dense semantic search index in `src/retrieval.py` for retrieval-augmented generation.
 * **Official Publication:** Zeng G, Yang W, Ju Z, Yang Q, Wang S, Zhang R, et al. MedDialog: A Large-scale Medical Dialogue Dataset. In: Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 2020. p. 9241–9252. 
 * **Data Access:** * [Official EMNLP Publication (ACL Anthology Link)](https://aclanthology.org/2020.emnlp-main.743/)
-  * [Public Data Mirror (Hugging Face Datasets Hub)](https://huggingface.co/datasets/med_dialog)
+  * [Public Data Mirror (Hugging Face Datasets Hub)](https://huggingface.co/datasets/OpenMed/MedDialog)
 
 ---
 
