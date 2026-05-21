@@ -142,6 +142,6 @@ This work uses the MedDialog corpus, BioBERT (DMIS Lab, Korea University), and t
 
 Md Mehedi Hasan <br>
 Mawlana Bhashani Science and Technology University <br>
-- GitHub: [Sentra-Guard Repository](https://github.com/Mehedi16009/Sentra-Guard/))
+- GitHub: [CLIN-LLM Repository](https://github.com/Mehedi16009/CLIN_LLM))
 - Personal Website: [Portfolio](https://md-mehedi-hasan-resume.vercel.app/)
 - Email: [mehedi.hasan.ict@mbstu.ac.bd](mehedi.hasan.ict@mbstu.ac.bd)
