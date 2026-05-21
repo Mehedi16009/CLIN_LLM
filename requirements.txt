@@ -1,0 +1,37 @@
+# CLIN-LLM Replication Package
+# Python 3.10+
+
+# Core ML / DL
+torch>=2.1.0
+transformers>=4.40.0
+sentence-transformers>=2.7.0
+datasets>=2.19.0
+
+# NLP utilities
+nltk>=3.8.1
+scikit-learn>=1.4.0
+imbalanced-learn>=0.12.0
+
+# Data handling
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Configuration
+pyyaml>=6.0.1
+
+# Visualisation and reporting
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# HTTP (RxNorm API calls)
+requests>=2.31.0
+
+# Notebook support (optional)
+jupyter>=1.0.0
+ipywidgets>=8.1.0
+
+# Gradio UI (see wiki/03_Deployment_Guide.md)
+gradio>=4.31.0
+
+# Development / reproducibility
+tqdm>=4.66.0
