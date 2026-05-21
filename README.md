@@ -18,29 +18,6 @@ CLIN-LLM is a multi-stage clinical AI pipeline that processes patient symptom in
 
 <img width="900" height="550" alt="CLIN-LLM_Framework" src="https://github.com/user-attachments/assets/4dec2ffa-ba10-496b-849f-82a2ac644f5b" />
 
-```
-Patient Input
-     │
-     ▼
-[Preprocessing] ─→ [BioBERT + MC Dropout]
-                             │
-              ┌──────────────┴──────────────┐
-         Low confidence                High confidence
-              │                             │
-              ▼                             ▼
-     [Expert Review Flag]        [Sentence-BERT Retrieval]
-                                           │
-                                           ▼
-                                  [FLAN-T5 Generation]
-                                           │
-                                           ▼
-                               [Safety Filters (DDI + Stewardship)]
-                                           │
-                              ┌────────────┴────────────┐
-                         Pharmacist                 Final Treatment
-                          Review                  Recommendation
-```
-
 ## Repository Structure
 
 ```
