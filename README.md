@@ -27,7 +27,7 @@ This project utilizes two primary public datasets to train and evaluate the CLIN
 * **Description:** Contains 1,200 patient records evenly distributed across 24 diagnostic classes (50 samples per class). Each record includes unstructured free-text symptom descriptions coupled with structured vital signs (temperature, heart rate, oxygen saturation).
 * **Usage in Pipeline:** Ingested by `src/preprocessing.py` and used to train the `BioBERT` disease classification module in `src/classification.py`.
 * **Data Access:** Available publicly via [Kaggle - Symptom2Disease Dataset](https://www.kaggle.com/datasets/niyarrbarman/symptom2disease/data).
-
+   * [Public Data Mirror (Hugging Face Datasets Hub)](https://huggingface.co/datasets/moriire/symptoms2diseases)
 ### 2. MedDialog Dataset
 * **Description:** A large-scale medical discourse corpus consisting of approximately 260,000 real-world, English-language doctor-patient dialogues spanning diverse clinical contexts.
 * **Usage in Pipeline:** Vectorized using `Biomedical Sentence-BERT` to form the dense semantic search index in `src/retrieval.py` for retrieval-augmented generation.
