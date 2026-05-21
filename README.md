@@ -16,6 +16,8 @@ CLIN-LLM is a multi-stage clinical AI pipeline that processes patient symptom in
 
 **Stage 4: Safety Validation.** Post-generation filtering enforces antibiotic stewardship rules, checks drug-drug interactions via the RxNorm REST API, and routes low-confidence cases to a human-in-the-loop review state. This layer produces a **67% reduction in unsafe recommendations** compared to unfiltered generation.
 
+<img width="750" height="600" alt="CLIN-LLM_Framework" src="https://github.com/user-attachments/assets/4dec2ffa-ba10-496b-849f-82a2ac644f5b" />
+
 ```
 Patient Input
      │
