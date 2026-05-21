@@ -104,7 +104,7 @@ python CLIN-LLM_runner.py \
 | FLAN-T5 | Base model | `google/flan-t5-large` |
 | FLAN-T5 | Beam width | 4 |
 
-Full hyperparameter documentation is in [`wiki/02_Hyperparameter_Guide.md`](wiki/02_Hyperparameter_Guide.md).
+Full hyperparameter documentation is in [`wiki/02_Hyperparameter_Guide.md`](wiki/Hyperparameter_Guide.md).
 
 ## Results
 
