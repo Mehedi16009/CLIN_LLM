@@ -18,6 +18,32 @@ CLIN-LLM is a multi-stage clinical AI pipeline that processes patient symptom in
 
 <img width="900" height="550" alt="CLIN-LLM_Framework" src="https://github.com/user-attachments/assets/4dec2ffa-ba10-496b-849f-82a2ac644f5b" />
 
+
+## 📊 Datasets & Open Access
+
+This project utilizes two primary public datasets to train and evaluate the CLIN-LLM pipeline. To reproduce our findings, download the datasets from the official sources below and place them into your local `data/raw/` directory.
+
+### 1. Symptom2Disease Dataset
+* **Description:** Contains 1,200 patient records evenly distributed across 24 diagnostic classes (50 samples per class). Each record includes unstructured free-text symptom descriptions coupled with structured vital signs (temperature, heart rate, oxygen saturation).
+* **Usage in Pipeline:** Ingested by `src/preprocessing.py` and used to train the `BioBERT` disease classification module in `src/classification.py`.
+* **Data Access:** Available publicly via [Kaggle - Symptom2Disease Dataset](https://www.kaggle.com/datasets/niyarrbarman/symptom2disease/data).
+
+### 2. MedDialog Dataset
+* **Description:** A large-scale medical discourse corpus consisting of approximately 260,000 real-world, English-language doctor-patient dialogues spanning diverse clinical contexts.
+* **Usage in Pipeline:** Vectorized using `Biomedical Sentence-BERT` to form the dense semantic search index in `src/retrieval.py` for retrieval-augmented generation.
+* **Official Publication:** Zeng G, Yang W, Ju Z, Yang Q, Wang S, Zhang R, et al. MedDialog: A Large-scale Medical Dialogue Dataset. In: Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 2020. p. 9241–9252. 
+* **Data Access:** * [Official EMNLP Publication (ACL Anthology Link)](https://aclanthology.org/2020.emnlp-main.743/)
+  * [Public Data Mirror (Hugging Face Datasets Hub)](https://huggingface.co/datasets/med_dialog)
+
+---
+
+### 🛡️ Data Processing & Ethical Safeguards
+As detailed in the manuscript, the pipeline implements strict preprocessing workflows before executing model operations:
+* **Anonymization:** MedDialog undergoes an automated Medical Named Entity Recognition (NER) pipeline to strip out geographic references, names, and temporal data to protect patient privacy.
+* **Normalization:** Text records are systematically mapped to the Unified Medical Language System (UMLS) to align medical synonyms (e.g., matching "shortness of breath" to "dyspnea").
+* **Class Balancing:** To eliminate downstream bias toward rare clinical conditions within the Symptom2Disease dataset, the Synthetic Minority Over-sampling Technique (SMOTE) is applied to lower-dimensional representations strictly within the training split.
+
+
 ## Repository Structure
 
 ```
